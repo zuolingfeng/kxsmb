@@ -73,14 +73,14 @@
     [self.view addSubview:titleLabel];
     */
     
-    _pathLabel = [[UILabel alloc] initWithFrame:CGRectMake(10,10,W-20,30)];
+    _pathLabel = [[UILabel alloc] initWithFrame:CGRectMake(10,10 + 64,W-20,30)];
     _pathLabel.backgroundColor = [UIColor clearColor];
     _pathLabel.textColor = [UIColor darkTextColor];
     _pathLabel.font = [UIFont systemFontOfSize:16];
     [self.view addSubview:_pathLabel];
     
     UILabel *workgroupLabel;
-    workgroupLabel = [[UILabel alloc] initWithFrame:CGRectMake(10,40,90,30)];
+    workgroupLabel = [[UILabel alloc] initWithFrame:CGRectMake(10,40 + 64,90,30)];
     workgroupLabel.backgroundColor = [UIColor clearColor];
     workgroupLabel.textColor = [UIColor darkTextColor];
     workgroupLabel.font = [UIFont boldSystemFontOfSize:16];
@@ -88,7 +88,7 @@
     [self.view addSubview:workgroupLabel];
     
     UILabel *usernameLabel;
-    usernameLabel = [[UILabel alloc] initWithFrame:CGRectMake(10,90,90,30)];
+    usernameLabel = [[UILabel alloc] initWithFrame:CGRectMake(10,90 + 64,90,30)];
     usernameLabel.backgroundColor = [UIColor clearColor];
     usernameLabel.textColor = [UIColor darkTextColor];
     usernameLabel.font = [UIFont boldSystemFontOfSize:16];
@@ -96,14 +96,14 @@
     [self.view addSubview:usernameLabel];
     
     UILabel *passwordLabel;
-    passwordLabel = [[UILabel alloc] initWithFrame:CGRectMake(10,140,90,30)];
+    passwordLabel = [[UILabel alloc] initWithFrame:CGRectMake(10,140 + 64,90,30)];
     passwordLabel.backgroundColor = [UIColor clearColor];
     passwordLabel.textColor =  [UIColor darkTextColor];
     passwordLabel.font = [UIFont boldSystemFontOfSize:16];
     passwordLabel.text = NSLocalizedString(@"Password", nil);    
     [self.view addSubview:passwordLabel];
     
-    _workgroupField = [[UITextField alloc] initWithFrame:CGRectMake(100, 41, W - 110, 30)];
+    _workgroupField = [[UITextField alloc] initWithFrame:CGRectMake(100, 41 + 64, W - 110, 30)];
     _workgroupField.autocapitalizationType = UITextAutocapitalizationTypeNone;
     _workgroupField.autocorrectionType = UITextAutocorrectionTypeNo;
     _workgroupField.spellCheckingType = UITextSpellCheckingTypeNo;
@@ -113,6 +113,7 @@
     _workgroupField.font = [UIFont systemFontOfSize:16];
     _workgroupField.borderStyle = UITextBorderStyleRoundedRect;
     _workgroupField.backgroundColor = [UIColor lightGrayColor];
+    _workgroupField.placeholder = @"(选填)";
     _workgroupField.returnKeyType = UIReturnKeyNext;
     
     [_workgroupField addTarget:self
@@ -121,7 +122,7 @@
     
     [self.view addSubview:_workgroupField];
     
-    _usernameField = [[UITextField alloc] initWithFrame:CGRectMake(100, 91, W - 110, 30)];
+    _usernameField = [[UITextField alloc] initWithFrame:CGRectMake(100, 91 + 64, W - 110, 30)];
     _usernameField.autocapitalizationType = UITextAutocapitalizationTypeNone;
     _usernameField.autocorrectionType = UITextAutocorrectionTypeNo;
     _usernameField.spellCheckingType = UITextSpellCheckingTypeNo;
@@ -129,6 +130,7 @@
     _usernameField.clearButtonMode =  UITextFieldViewModeWhileEditing;
     _usernameField.textColor = [UIColor blueColor];
     _usernameField.font = [UIFont systemFontOfSize:16];
+    _usernameField.placeholder = @"username";
     _usernameField.borderStyle = UITextBorderStyleRoundedRect;
     _usernameField.backgroundColor = [UIColor lightGrayColor];
     _usernameField.returnKeyType = UIReturnKeyDone;
@@ -139,7 +141,7 @@
     
     [self.view addSubview:_usernameField];
     
-    _passwordField = [[UITextField alloc] initWithFrame:CGRectMake(100, 141, W - 110, 30)];
+    _passwordField = [[UITextField alloc] initWithFrame:CGRectMake(100, 141 + 64, W - 110, 30)];
     _passwordField.autocapitalizationType = UITextAutocapitalizationTypeNone;
     _passwordField.autocorrectionType = UITextAutocorrectionTypeNo;
     _passwordField.spellCheckingType = UITextSpellCheckingTypeNo;
@@ -150,6 +152,7 @@
     _passwordField.borderStyle = UITextBorderStyleRoundedRect;
     _passwordField.backgroundColor = [UIColor lightGrayColor];
     _passwordField.returnKeyType = UIReturnKeyDone;
+    _passwordField.placeholder = @"password";
     _passwordField.secureTextEntry = YES;    
     
     [_passwordField addTarget:self

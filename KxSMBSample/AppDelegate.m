@@ -88,7 +88,6 @@
     if (!_smbAuthViewController) {
         _smbAuthViewController = [[SmbAuthViewController alloc] init];
         _smbAuthViewController.delegate = self;
-        _smbAuthViewController.username = @"guest";
     }
     
     UINavigationController *nav = (UINavigationController *)self.window.rootViewController;

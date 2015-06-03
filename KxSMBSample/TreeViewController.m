@@ -140,9 +140,9 @@
         self.title = path.lastPathComponent;
         
     } else {
-        
-        path = @"smb://";
-        self.title = @"smb://";
+        // 需配置SMB服务地址
+        path = @"smb://192.168.1.124";
+        self.title = @"Linf's smb server";
     }
     
     _items = nil;
@@ -176,8 +176,8 @@
 }
 
 - (void) requestNewPath {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connect to Host"
-                                                    message:@"\n\n"
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"notice"
+                                                    message:@"Connect to Host"
                                                    delegate:self
                                           cancelButtonTitle:@"Cancel"
                                           otherButtonTitles:@"Go", nil];
@@ -256,7 +256,7 @@
 
 - (void) actionCopyFile:(id)sender
 {
-    NSString *name = [NSString stringWithFormat:@"%d.tmp", (NSUInteger)[NSDate timeIntervalSinceReferenceDate]];
+    NSString *name = [NSString stringWithFormat:@"%lu.tmp", (unsigned long)[NSDate timeIntervalSinceReferenceDate]];
     NSString *path = [_path stringByAppendingSMBPathComponent:name];
     
     KxSMBProvider *provider = [KxSMBProvider sharedSmbProvider];
