@@ -1,7 +1,9 @@
 KxSMB is objective-c wrapper for libsmbclient lib. 
 ===========================================
   
-注意：由于libs过大，github不让上传，现已分享至百度云盘(http://pan.baidu.com/s/1kT04Cib),请自行下载  
+注意：由于libs过大，github不让上传，现已分享至百度云盘,请自行下载。  
+下载地址：  http://pan.baidu.com/s/1kT04Cib  
+
 
 
 For now KxSMB supports a limited set of SMB operations.
